@@ -85,10 +85,10 @@
         function wish(i, f) {
             setTimeout(() => {
                 f(i);
-            }, (2-(i-1))*1000)
+            }, (5-(i-1))*1000)
         }
         let k = 0;
-        for(var i=2;i>0;i--) {
+        for(var i=5;i>0;i--) {
             wish(i, (j) => {
                 if(j === 1) {
                     h.innerHTML = j;
