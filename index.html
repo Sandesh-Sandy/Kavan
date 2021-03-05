@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: darkviolet;
+            color: white;
+            background: url('https://keep.google.com/u/0/media/v2/1h3OlX5vTL1k_9r8mhI-0yCC-KyoSBdYCiodGpTxfMj78mw3B8Lom0TyeLWabMRYJWNTQ/1cxQMkQCZpCAmR-qb0GkmpzxpU7tfENbPsnQ4nacmWJySLM9m6E2e5AvqIQ6MpAVDHAJa?accept=image/gif,image/jpeg,image/jpg,image/png,image/webp,audio/aac&sz=700');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 800;
+            font-size: 30vw;
+            text-align: center;
+        }
+        button {
+            background: none;
+            color: cyan;
+            font-size: larger;
+            font-family: sans-serif;
+            font-weight: 800;
+            border: none;
+            border: 2px solid cyan;
+            border-radius: 3px;
+            width: 90%;
+            height: 50px;
+            margin-left: 40px;
+        }
+        video {
+            margin: 20px;
+            border-radius: 12px;
+            height: 500px;
+            height: 600px;
+        }
+        canvas {
+            cursor: crosshair;
+            display: block;
+        }
+    </style>
+    <link rel="stylesheet" href="fire.css">
+</head>
+<body>
+    <div class="pyro">
+        <div class="before"></div>
+        <div class="after"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+
+            </div>
+            <div class="col-2" id='v'>
+                <h1 id='h'></h1>
+            </div>
+            <div class="col-7">
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-2" id='btn'>
+                
+            </div>
+            <div class="col-7">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let h = document.getElementById('h');
+        function wish(i, f) {
+            setTimeout(() => {
+                f(i);
+            }, (2-(i-1))*1000)
+        }
+        let k = 0;
+        for(var i=2;i>0;i--) {
+            wish(i, (j) => {
+                if(j === 1) {
+                    h.innerHTML = j;
+                    setTimeout(() => {
+                        h.style.fontSize = '10vw';
+                        h.innerHTML = 'Happy Birthday Kavan';
+                        setTimeout(() => {
+                            document.querySelector('.pyro').style.display = 'block';
+                        }, 1000);
+                    }, 1000);
+                    setTimeout(() => {
+                        var btn = document.createElement('button');
+                        btn.innerHTML = 'Click Me';
+                        document.getElementById('btn').append(btn);
+                        btn.onclick = () => {
+                            h.style.display = 'none';
+                            var v = document.createElement('video');
+                            v.setAttribute('src', 'Kavan.mp4');
+                            v.setAttribute('controls', 'true');
+                            var v1 = document.getElementById('v');
+                            v1.append(v);
+                        };
+                    }, 2000);
+                }
+                else {
+                    h.innerHTML = j;
+                }
+            });
+        }
+    </script>
+</body>
+</html>
